@@ -1,95 +1,26 @@
-## 微信公众号格式化工具
+### 一.自我介绍
 
-GitHub 地址：[https://github.com/barretlee/online-markdown](https://github.com/barretlee/online-markdown)
+　籍贯云南，现居上海。软件工程专业，专注于基础架构和各种中间件设计与研发。`Spring Cloud中国社区`发起人。
+* 曾就职于`饿了么移动基础架构组`。
+* 曾就职于`唯品会平台架构部`，参与`唯品会中间件(服务网关,应用框架，代码生成器等)`相关的研发工作。
+* 曾参与唯品会`互联网金融平台的设计与开发(https://jinrong.vip.com/)`， 
+* 曾参与基于云计算Iaas的`平安科技云平台`(www.pinganyun.com)和`国泰君安证卷`云平台的开发，
+* 曾参与基于`云计算Saas平台`的`云销售管理系统`的开发等。开发的私有云产品应用于`太平人寿`，`东亚银行`，`天翼视讯`，`上海证券交易所`,`国泰君安`等。
+* 熟练运用各种流行的JavaEE技术进行组合式架构设计与开发。业余时间研究`并发编程`，`中间件`，`异地多活`，`Spring Cloud`，`ZStack`(zstack.org.cn)，Mycat等开源项目，以及软件架构设计，程序性能优化，JVM，高并发等！
 
-> 使用微信公众号编辑器有一个十分头疼的问题——粘贴出来的代码，格式错乱，而且特别丑。这块编辑器能够解决这个问题。
+### 二.分享经历
+1. [Spring Cloud Zuul与网关中间件](http://www.itdks.com/dakashuo/new/dakalive/detail/1260)
 
-### Changelog
+2. [Spring Cloud与中间件及国内使用情况](http://www.itdks.com/dakashuo/new/dakalive/detail/681)
 
-- 适配 Android
-- 支持代码不转行，横向滚动条
-- 支持页面主题样式配置
+### 三.联系方式
+* E-mail: [Software_King@qq.com](mailto:Software_King@qq.com)
+* Github: [Software_King](http://github.com/softwareking)
+* 网站: http://xujin.org 
+* 网络ID:`Software_King`
+* 微信:`Software_King`
+* Spring Cloud中国社区:http://springcloud.cn
+* 座右铭:软件世界就是模拟客观世界，从而需求分析，技术驱动，改造世界！
 
-### 代码示例
 
-```javascript
-var OnlineMarkdown = {
-  init: function() {
-    var self = this;
-    self.load().then(function() {
-      self.start()
-    }).fail(function(){
-      self.start();
-    });
-  },
-  start: function() {
-    this.updateOutput();
-  },
-  load: function() {
-    return $.ajax({
-      type: 'GET',
-      url: params.path || './demo.md',
-      dateType: 'text',
-      timeout: 2000
-    }).then(function(data) {
-      $('#input').val(data);
-    });
-  },
-  updateOutput: function () {
-    var val = this.converter.makeHtml($('#input').val());
-    $('#output .wrapper').html(val);
-    PR.prettyPrint();
-  }
-};
 
-OnlineMarkdown.init();
-```
----
-
-上面是 `JavaScript`，下面是 `php`：
-
-```php
-echo 'hello,world'
-```
-
-### 表格示例
-
-| 品类 | 个数 | 备注 |
-|-----|-----|------|
-| 苹果 | 1   | nice |
-| 橘子 | 2   | job |
-
-### 关于小胡子哥
-
-![微信公众号](http://md.barretlee.com/imgs/qrcode.jpg)
-
----
-
-以上是用的比较多的，还装了几十个使用频度比较低的插件，主要包括 Snippet 和文件高亮配置，可以在这里查看：<https://gist.github.com/barretlee/a5170eb6ca1805f66687063d2e3a4983>，你也可以通过 `Settings Sync` 将这个配置下载下来，id 就是后面半截：`a5170eb6ca1805f66687063d2e3a4983`。
-
-### 在命令行打开 VSC
-
-在安装好 VSC 后，直接配置 `.bash_profile` 或者 `.zshrc` 文件：
-
-```bash
-alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code';
-VSC_BIN='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin';
-PATH=$VSC_BIN:$PATH;
-export PATH;
-```
-
-然后让配置生效，在控制台执行：
-
-```bash
-# 如果没有安装 zsh，可能是 ~/.bash_profile
-source ~/.zshrc 
-```
-
-这个时候就可以在全局打开了：
-
-```bash
-# -a 的意思是不要新开窗口，在当前已经打开的 vsc 中打开文件
-vsc path/to/file.ext -a 
-```
-
-有同学提到，VSC 的面板上搜索 `install` 就可以在命令行安装 `code` 这个命令了，不过我更喜欢使用 `vsc` 来打开文件，这也算是折腾吧 ；）
