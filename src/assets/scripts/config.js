@@ -40,6 +40,11 @@ export default {
   ],
   colorOption: [
     {
+      label: "活力橙",
+      value: "rgba(255, 106, 0, 1)",
+      desc: "最新流行",
+    },
+    {
       label: "经典蓝",
       value: "rgba(15, 76, 129, 1)",
       desc: "最新流行",
